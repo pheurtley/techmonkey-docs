@@ -9,9 +9,50 @@
     <description>Recent content in Categories on techmonkey-dcos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 20 Oct 2020 23:44:39 -0300</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>cd</title>
+      <link>/categories/cd/</link>
+      <pubDate>Tue, 20 Oct 2020 23:44:39 -0300</pubDate>
+      
+      <guid>/categories/cd/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
+    
+    <item>
+      <title>ci</title>
+      <link>/categories/ci/</link>
+      <pubDate>Tue, 20 Oct 2020 23:44:39 -0300</pubDate>
+      
+      <guid>/categories/ci/</guid>
+      <description>
+        
+          
+          
+          
+        
+        
+        
+          
+          
+        
+        </description>
+    </item>
     
   </channel>
 </rss>

@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/categories/</loc>
+    <lastmod>2020-10-20T23:44:39-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/cd/</loc>
+    <lastmod>2020-10-20T23:44:39-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/ci/</loc>
+    <lastmod>2020-10-20T23:44:39-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/here-we-go/</loc>
     <lastmod>2020-10-20T23:44:39-03:00</lastmod>
   </url>
@@ -15,10 +30,6 @@
   <url>
     <loc>/</loc>
     <lastmod>2020-10-20T23:44:39-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
   </url>
   
   <url>
