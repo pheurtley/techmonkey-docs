@@ -1,0 +1,24 @@
+name: Pulls repo + build image + push to dockerhub 
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:          
+    - uses: actions/checkout@v2
+    - name: Login to Docker Registry
+      run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_LOGIN }} --password-stdin
+    - name: Define variables
+      run: |
+        cat .version | grep VERSION= | head -n1| grep -o '".*"' | sed 's/"//g' > VERSION
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag pheurtley/techmonkey-docs:$(cat VERSION) --tag pheurtley/techmonkey-docs:latest
+    - run: docker push pheurtley/techmonkey-docs
