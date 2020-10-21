@@ -1,4 +1,4 @@
-name: Pulls repo + build image + push to dockerhub 
+name: Pulls repo + build image + push to dockerhub
 
 on:
   push:
@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:          
+    steps:
     - uses: actions/checkout@v2
     - name: Login to Docker Registry
       run: echo ${{ secrets.DOCKER_TOKEN }} | docker login -u ${{ secrets.DOCKER_LOGIN }} --password-stdin
@@ -22,3 +22,17 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag pheurtley/techmonkey-docs:$(cat VERSION) --tag pheurtley/techmonkey-docs:latest
     - run: docker push pheurtley/techmonkey-docs
+
+    - name: deploy to cluster
+      uses: steebchen/kubectl@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      with:
+        args: set image --record deployment/docs-deploy prueba-gha=${{ github.repository }}:latest
+    - name: verify deployment
+      uses: steebchen/kubectl@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        KUBECTL_VERSION: "1.15"
+      with:
+        args: '"rollout status deployment/docs-deploy"'
