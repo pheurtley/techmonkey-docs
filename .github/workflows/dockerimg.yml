@@ -28,7 +28,7 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: set image --record deployment/docs-deploy prueba-gha=${{ github.repository }}:latest
+        args: set image --record deployment/docs-deploy prueba-gha=${{ github.repository }}:latest -n techmonkey-docs
     - name: verify deployment
       uses: steebchen/kubectl@master
       env:
