@@ -23,16 +23,16 @@ jobs:
       run: docker build . --file Dockerfile --tag pheurtley/techmonkey-docs:$(cat VERSION) --tag pheurtley/techmonkey-docs:latest
     - run: docker push pheurtley/techmonkey-docs
 
-    - name: deploy to cluster
-      uses: steebchen/kubectl@master
-      env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-      with:
-        args: set image --record deployment/docs-deploy docs=${{ github.repository }}:$(cat VERSION) -n techmonkey-docs
-    - name: verify deployment
-      uses: steebchen/kubectl@master
-      env:
-        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        KUBECTL_VERSION: "1.15"
-      with:
-        args: '"rollout status deployment/docs-deploy -n techmonkey-docs"'
+    # - name: deploy to cluster
+    #   uses: steebchen/kubectl@master
+    #   env:
+    #     KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+    #   with:
+    #     args: set image --record deployment/docs-deploy docs=${{ github.repository }}:$(cat VERSION) -n techmonkey-docs
+    # - name: verify deployment
+    #   uses: steebchen/kubectl@master
+    #   env:
+    #     KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+    #     KUBECTL_VERSION: "1.15"
+    #   with:
+    #     args: '"rollout status deployment/docs-deploy -n techmonkey-docs"'
