@@ -9,7 +9,7 @@
     <description>Recent content in ci on techmonkey-dcos</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Oct 2020 23:44:39 -0300</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2020 23:05:42 -0300</lastBuildDate>
     
 	<atom:link href="/categories/ci/index.xml" rel="self" type="application/rss+xml" />
     
@@ -17,7 +17,7 @@
     <item>
       <title>Here we go!</title>
       <link>/posts/here-we-go/</link>
-      <pubDate>Tue, 20 Oct 2020 23:44:39 -0300</pubDate>
+      <pubDate>Wed, 21 Oct 2020 23:05:42 -0300</pubDate>
       
       <guid>/posts/here-we-go/</guid>
       <description>
@@ -28,7 +28,10 @@
         
         
         
-          &lt;h3 id=&#34;kubernetes-gitops-series&#34;&gt;Kubernetes GitOps Series:&lt;/h3&gt;
+          Hello world from Hugo! What is this about? A static website that I will use to document and what better than to use the start-up as the first documentation.
+This mini project consists of the following:
+A Github Repository techmonkey-docs with Hugo&amp;rsquo;s files, the declaration for the docker image, the file to use Github Action (another yml)
+On the other hand we have a second Repository techmonkey with the declarations to generate in Kubernetes with ArgoCD the deployment in CIVO.
           
         
         </description>
